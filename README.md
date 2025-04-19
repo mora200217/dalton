@@ -62,7 +62,7 @@ El sistema permite que un robot se desplace de forma autónoma siguiendo objetiv
 - 🖼️ **Procesamiento de imagen** (detección por color)
 - ⚡ **PWM para control de motores**
 - 📟 **Sensores de proximidad** (ultrasónicos o IR)
-- 🧪 **Lenguajes:** C/C++ (Arduino/ESP-IDF), VHDL/Verilog (si hay lógica dedicada)
+- 🧪 **Lenguajes:** C (Arduino/ESP-IDF/Asembly), VHDL/Verilog (si hay lógica dedicada)
 
 ---
 
