@@ -1,0 +1,5 @@
+-Ibuild/software/include
+-I/Users/amoralesma/litex/litex/litex/soc/cores/cpu/picorv32
+-Isoftware/include/generated
+
+-std=c11
