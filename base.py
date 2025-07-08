@@ -10,7 +10,8 @@ from litex.soc.cores.led import LedChaser
 from modules.pwm import PWM
 from cores.sum import Verilog_SUM
 
-
+# import all the custom cores
+from cores import *
 
 
 
@@ -50,6 +51,9 @@ class BaseSoC(SoCCore):
         self.submodules.pwm = PWM(platform.request("user_led", 0))
         SoCCore.add_csr(self, "sum")
         self.submodules.sum = Verilog_SUM()
+        # HDL wrappers include their own source
+        self.submodules.quadrature_decoder = QuadratureDecoder(platform)
+        self.add_csr('quadrature_decoder')
 
 
 # Build
