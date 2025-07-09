@@ -8,7 +8,7 @@ from litex.soc.cores import dna
 from litex.soc.cores.led import LedChaser
 
 from modules.pwm import PWM
-from cores.sum import Verilog_SUM
+
 
 # import all the custom cores
 from cores import *
@@ -21,7 +21,7 @@ class BaseSoC(SoCCore):
         sys_clk_freq = int(25.000e6)
 
         ## Add verilogs
-        platform.add_source("rtl/sum.v")
+        # platform.add_source("rtl/sum.v")
         # platform.add_source("rtl/sum.v")
         # 
 
@@ -49,8 +49,6 @@ class BaseSoC(SoCCore):
           #   sys_clk_freq = sys_clk_freq)
 
         self.submodules.pwm = PWM(platform.request("user_led", 0))
-        SoCCore.add_csr(self, "sum")
-        self.submodules.sum = Verilog_SUM()
         # HDL wrappers include their own source
         self.submodules.quadrature_decoder = QuadratureDecoder(platform)
         self.add_csr('quadrature_decoder')

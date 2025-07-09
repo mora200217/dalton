@@ -35,6 +35,10 @@ _io = [
 
     # SPIRAM
     # SPIFlash
+    ("i2c", 0,
+     Subsignal("sda", Pins("E4")),
+     Subsignal("scl", Pins("D3")),
+     IOStandard("LVCMOS33"))
 
 
     # RMII Ethernet
