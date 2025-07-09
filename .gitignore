@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,c++,assembler,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,c++,assembler,macos,windows
 
+*.org
+# Org mode in emacs
 ### Assembler ###
 *.exe
 *.o
