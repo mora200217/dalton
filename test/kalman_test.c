@@ -130,8 +130,8 @@ int main(int argc, char* argv[]) {
     int32_t R = 262144; // 8.0 en Q15
 
     int32_t true_position = 0;
-    int32_t velocity = 2 << Q; // 2 m/s
-    int32_t acceleration = 1 << Q; // 1 m/s^2
+    int32_t velocity = 6 << Q; // 2 m/s
+    int32_t acceleration = 4  << Q; // 1 m/s^2
 
     while (1) {
         sleep(1);

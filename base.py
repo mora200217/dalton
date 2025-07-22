@@ -7,6 +7,8 @@ from litex.soc.integration.builder import *
 from litex.soc.cores import dna
 from litex.soc.cores.led import LedChaser
 
+from litex.soc.cores.bitbang import I2CMaster as I2C
+
 from modules.pwm import PWM
 
 
@@ -41,12 +43,9 @@ class BaseSoC(SoCCore):
             ~platform.request("user_btn_n")
         )
 
-        # LED
-        #
-          # PWM
-        # self.leds = LedChaser(
-         #    pads = platform.request_all("user_led"),
-          #   sys_clk_freq = sys_clk_freq)
+        # I2C Bus com
+        self.submodules.i2c = I2C(platform.request("i2c", 0))
+
 
         self.submodules.pwm = PWM(platform.request("user_led", 0))
         # HDL wrappers include their own source

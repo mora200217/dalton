@@ -30,7 +30,7 @@ hello_world.elf: $(OBJECTS)
 		-lc -lbase -lcompiler_rt
 	chmod -x $@
 
-main.o: sum_test.c
+main.o: main.c
 	$(compile)
 
 crt0.o: $(CPU_DIRECTORY)/crt0.S
