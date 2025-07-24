@@ -272,7 +272,11 @@ $RECYCLE.BIN/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/python,c++,assembler,macos,windows
-
+# generated files
+*.elf
+*.map
+*.fbi
+*.bin
 # iverilog simulation files
 *.vpp
 *.vcd
