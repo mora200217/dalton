@@ -13,7 +13,13 @@ TARGET=
 BUILD_DIR=../build/$(TARGET)/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
-OBJECTS= main.o crt0.o isr.o kalman.o
+OBJECTS= main.o crt0.o isr.o 
+
+ifdef WITH_CXX
+	CFLAGS += -DWITH_CXX
+endif
+
+
 all: hello_world.bin
 %.bin: %.elf
 	$(OBJCOPY) -O binary $< $@
@@ -33,14 +39,20 @@ hello_world.elf: $(OBJECTS)
 main.o: main.c
 	$(compile)
 
-kalman.o: kalman/kalman_filter.c
-	$(compile)
+
+
+# kalman.o: kalman/kalman_filter.c
+# 	$(compile)
 
 
 crt0.o: $(CPU_DIRECTORY)/crt0.S
 	$(assemble)
 %.o: %.c
 	$(compile)
+
+%.o: utils/%.c
+	$(compile)
+
 %.o: %.S
 	$(assemble)
 clean:

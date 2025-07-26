@@ -12,10 +12,9 @@ from litex.soc.cores.bitbang import I2CMaster as I2C
 
 
 # import all the custom cores
+from cores.modules.cordic import VerilogCORDIC
 
-from cores.cordic import VerilogCORDIC
-from modules.pwm import PWM
-from cores.quadrature_decoder import QuadratureDecoder
+
 
 
 # Define SoC
@@ -48,17 +47,17 @@ class BaseSoC(SoCCore):
         self.submodules.i2c = I2C(platform.request("i2c", 0))
 
 
-        self.submodules.pwm = PWM(platform.request("user_led", 0))
+        # self.submodules.pwm = PWM(platform.request("user_led", 0))
         # HDL wrappers include their own source
-        self.submodules.quadrature_decoder = QuadratureDecoder(platform)
-        self.add_csr('quadrature_decoder')
+        # self.submodules.quadrature_decoder = QuadratureDecoder(platform)
+        # self.add_csr('quadrature_decoder')
 
 
-        # # CORDIC module 
-   
-        platform.add_source("cores/rtl/cordic.v")
-        self.submodules.cordic = VerilogCORDIC(platform)
-        self.add_csr("VerilogCORDIC")
+        # CORDIC module 
+        # platform.add_source("cores/rtl/utils/cordic.v")
+        # self.submodules.cordic = VerilogCORDIC(platform)
+
+        # self.add_csr("VerilogCORDIC")
 
 
 # Build

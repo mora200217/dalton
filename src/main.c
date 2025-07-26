@@ -12,6 +12,7 @@
 #include <generated/csr.h>
 #include <generated/soc.h>
 
+// #include "irobot2_serial/irobot2.h"
 
 uint8_t posx; 
 uint8_t posy; 
@@ -41,6 +42,37 @@ int main(void)
 
     uart_init();
 
+    /// Init commadn to irobot2 
+
+    
+    uart_write(7); 
+    while(1){
+    my_wait(1000); 
+
+    uart_write(128);  // start 
+    my_wait(1000)  ; 
+
+ 
+    uart_write(131); 
+    my_wait(1000)  ; 
+    
+    uart_write(137);
+	uart_write(0);
+	uart_write(20);
+	uart_write(0);
+	uart_write(20);
+
+    my_wait(1000)  ; 
+    }
+
+    
+    // uart_write(DRIVE);
+    // uart_write(vel_high);
+    // uart_write(vel_low);
+    // uart_write(rad_high);
+    // uart_write(rad_low);
+    
+    while(1); 
     printf("Welcome to Dalton!\n");
     
     if(!cordic_done_read())
@@ -81,7 +113,7 @@ int main(void)
     printf("IMU activation command sent\n");
 
     data = 0x15;
-    i2c_write(0x69, 0x7E, &data, 1, 1); // Activación acc 
+    i2c_write(0x69, 0x7E, &data, 1, 1); // Activación gyro 
 
     printf("IMU activation      command sent\n"); 
 
@@ -186,8 +218,8 @@ int main(void)
 // const int32_t dt = 13107;
 
 // // Gyro: suponer gyro_raw en deg/s --> rad/s: rad = deg * pi/180
-// // Aproxima pi/180 en Q16.16: pi/180 ≈ 0.01745 * 65536 ≈ 1147
-// int32_t gyro_z_q16 = gyro_raw * 1147; // Q16.16
+// // Aproxima pi/180 en Q16.16: pi/180 ≈ 0.017453 * 65536 ≈ 1147
+int32_t gyro_z_q16 = gyro_raw * 1147; // Q16.16
 
 // // Integrar giro: theta += gyro_z_rad * dt >> 16
 // theta += ( ( (int64_t)gyro_z_q16 * dt ) >> 16 );

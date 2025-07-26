@@ -2,7 +2,7 @@ from migen.genlib.cdc import MultiReg
 from litex.soc.interconnect.csr import *
 from litex.soc.interconnect.csr_eventmanager import *
 
-class VerilogInverse(Module, AutoCSR):
+class VerilogCORDIC(Module, AutoCSR):
     def __init__(self, data):
         # Interfaz
         self.clk = ClockSignal()
