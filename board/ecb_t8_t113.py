@@ -18,6 +18,11 @@ _io = [
         Subsignal("rx", Pins("D4")), # 28 on H4 Must be changed in next HW version to 142
         IOStandard("LVCMOS33")
     ),
+    ("serial", 1,
+        Subsignal("tx", Pins("E3")), # 27 on H4 Must be changed in next HW version to 144
+        Subsignal("rx", Pins("N4")), # 28 on H4 Must be changed in next HW version to 142
+        IOStandard("LVCMOS33")
+    ),
     
     # Leds
     ("user_led", 0, Pins("T6"), IOStandard("LVCMOS33")),

@@ -8,7 +8,7 @@ from litex.soc.cores import dna
 from litex.soc.cores.led import LedChaser
 
 from litex.soc.cores.bitbang import I2CMaster as I2C
-
+from litex.soc.cores.uart import UART, UARTPHY
 
 
 # import all the custom cores
@@ -33,6 +33,8 @@ class BaseSoC(SoCCore):
             clk_freq=sys_clk_freq,
             ident="LiteX CPU Test on ecbt813", ident_version=True,
             integrated_rom_size=0x8000,
+            with_uart=True, 
+            
             integrated_main_ram_size=0x4000,
             **kwargs
         )
@@ -43,10 +45,12 @@ class BaseSoC(SoCCore):
             ~platform.request("user_btn_n")
         )
 
-        # I2C Bus com
+        # Add I2C 
         self.submodules.i2c = I2C(platform.request("i2c", 0))
-
-
+        
+       # Add custom uart 
+        self.add_uart(name="uart_lidar_phy", uart_name="uart_lidar", uart_pads=platform.request("serial", 1), baudrate=115200)
+        
         # self.submodules.pwm = PWM(platform.request("user_led", 0))
         # HDL wrappers include their own source
         # self.submodules.quadrature_decoder = QuadratureDecoder(platform)
