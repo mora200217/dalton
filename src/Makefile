@@ -14,9 +14,15 @@ BUILD_DIR=../build/$(TARGET)/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
+MODULE_SOURCES := $(wildcard modules/*.c)
+MODULE_OBJECTS := $(MODULE_SOURCES:modules/%.c=%.o)
+
+UTILS_SOURCES := $(wildcard utils/*.c)
+UTILS_OBJECTS := $(UTILS_SOURCES:utils/%.c=%.o)
+
 CFLAGS += -I$(BUILD_DIR)/software/include
 
-OBJECTS= main.o crt0.o isr.o
+OBJECTS= main.o crt0.o $(MODULE_OBJECTS) $(UTILS_OBJECTS)
 
 
 CFLAGS += -Iinclude

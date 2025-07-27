@@ -6,6 +6,7 @@
         "span": "c",
         "soc.h": "c",
         "stdlib.h": "c",
-        "irq.h": "c"
+        "irq.h": "c",
+        "lidar.h": "c"
     }
 }

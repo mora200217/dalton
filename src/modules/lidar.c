@@ -1,16 +1,23 @@
 
-#include "lidar.h"
+#include "lidar.h" 
 
 #include <stdio.h>
 #include "irq.h"
 #include <uart.h>
-#include "console.h"
+
 
 // extern volatile int index;
 // extern volatile int distance;
 // extern volatile int strength;
 // extern volatile int en_pausa;
 // extern char packet[PACKET_LEN];
+
+volatile int index       = 0;
+volatile int distance    = 0;
+volatile int strength    = 0;
+volatile int en_pausa    = 0;
+char packet[PACKET_LEN]  = {0};
+
 
 // ------------------ Lógica de recepción de datos ------------------
 int recibir_paquete(void) {
@@ -69,13 +76,3 @@ void loop_principal(void) {
     }
 }
 
-// ------------------ Función main ------------------
-int main(void) {
-    irq_setmask(0);
-    irq_setie(1);
-    uart_init();
-
-    loop_principal();
-
-    return 0;
-}
