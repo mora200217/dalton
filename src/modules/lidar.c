@@ -1,15 +1,27 @@
 
 #include "lidar.h"
 
+#include <stdio.h>
+#include "irq.h"
+#include <uart.h>
+#include "console.h"
+
+// extern volatile int index;
+// extern volatile int distance;
+// extern volatile int strength;
+// extern volatile int en_pausa;
+// extern char packet[PACKET_LEN];
 
 // ------------------ Lógica de recepción de datos ------------------
 int recibir_paquete(void) {
-    if (!uart_ver_rx_avail_read()) return 0;
+    if (uart_txempty_read()) return 0;
 
-    uart_ver_rx_ack_write(1);
-    uart_ver_rx_ack_write(0);
+    uart_rxtx_write(1);
+    uart_rxtx_write(0);
 
-    char b = uart_ver_rx_data_read();
+    
+    char b = uart_rxtx_read();
+
 
     if (index == 0 && b != 0x59) return 0;
     if (index == 1 && b != 0x59) { index = 0; return 0; }

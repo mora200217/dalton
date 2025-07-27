@@ -5,7 +5,6 @@
 
 #include <stdint.h>
 
-
 // ------------------ Constantes ------------------
 #define PACKET_LEN 9
 #define UMBRAL_CM 10

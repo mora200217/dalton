@@ -14,9 +14,17 @@ BUILD_DIR=../build/$(TARGET)/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
+CFLAGS += -I$(BUILD_DIR)/software/include
+
+
 OBJECTS= main.o crt0.o isr.o 
 
+
+
 CFLAGS += -Iinclude
+CFLAGS += -Imodules
+CFLAGS+=-Iutils
+
 
 ifdef WITH_CXX
 	CFLAGS += -DWITH_CXX

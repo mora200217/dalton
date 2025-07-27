@@ -4,6 +4,8 @@
         "string": "c",
         "string_view": "c",
         "span": "c",
-        "soc.h": "c"
+        "soc.h": "c",
+        "stdlib.h": "c",
+        "irq.h": "c"
     }
 }

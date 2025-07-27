@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <irq.h>
+
 #include <uart.h>
 #include <i2c.h>
 
@@ -12,20 +12,24 @@
 #include <generated/csr.h>
 #include <generated/soc.h>
 
+#include"fpgaio.h"
 
-#include "lidar.h"
-#include "include/lidar.h"
-#include "imu.h"
-#include "camera.h"
+
+
+
+// #include "lidar.h"
+// #include "include/lidar.h"
+// #include "imu.h"
+// #include "camera.h"
 
 int main(void){
-
-    uart_rxtx_write(7); 
-
-    uart_rxtx_write(131); 
-    uart_rxtx_write(137); 
     
-    recibir_paquete(); 
-    
+ 
+
+       uart_init();
+
+       printf("Welcome to Dalton!"); 
+
+    // recibir_paquete();  
     return 0; 
 }
