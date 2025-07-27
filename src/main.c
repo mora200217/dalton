@@ -27,6 +27,8 @@ int main(void){
        while (1) {
        my_wait(1000); 
 
+      
+
        printf("...\n"); 
         if (recibir_paquete()) {
             procesar_distancia();

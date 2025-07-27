@@ -33,7 +33,7 @@ class BaseSoC(SoCCore):
             clk_freq=sys_clk_freq,
             ident="LiteX CPU Test on ecbt813", ident_version=True,
             integrated_rom_size=0x8000,
-            with_uart=True, 
+            # with_uart=True, 
             
             integrated_main_ram_size=0x4000,
             **kwargs
