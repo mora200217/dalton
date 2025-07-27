@@ -16,9 +16,7 @@ include $(SOC_DIRECTORY)/software/common.mak
 
 CFLAGS += -I$(BUILD_DIR)/software/include
 
-
-OBJECTS= main.o crt0.o isr.o 
-
+OBJECTS= main.o crt0.o isr.o
 
 
 CFLAGS += -Iinclude

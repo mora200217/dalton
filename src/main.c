@@ -14,21 +14,11 @@
 
 #include"fpgaio.h"
 
-
-
-
-// #include "lidar.h"
-// #include "include/lidar.h"
-// #include "imu.h"
-// #include "camera.h"
-
 int main(void){
-    
- 
+    fpgaio_enable_interrupts(); 
+    uart_init();
 
-       uart_init();
-
-       printf("Welcome to Dalton!"); 
+    printf("Welcome to Dalton!"); 
 
     // recibir_paquete();  
     return 0; 
