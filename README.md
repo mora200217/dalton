@@ -63,12 +63,7 @@ El sistema permite que un robot se desplace de forma autónoma siguiendo objetiv
 - [ ] Pruebas en entorno controlado  
 - [ ] Optimización y documentación final  
 
----
 
-## 📌 Créditos y Autores
-
-Proyecto desarrollado por [Tu nombre o grupo de trabajo].  
-Contribuciones, sugerencias y mejoras son bienvenidas.
 
 ---
 
