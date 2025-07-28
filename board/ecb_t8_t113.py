@@ -18,26 +18,32 @@ _io = [
         Subsignal("rx", Pins("D4")), # 28 on H4 Must be changed in next HW version to 142
         IOStandard("LVCMOS33")
     ),
-    ("serial", 1,
-        Subsignal("tx", Pins("E3")), # 27 on H4 Must be changed in next HW version to 144
-        Subsignal("rx", Pins("N4")), # 28 on H4 Must be changed in next HW version to 142
-        IOStandard("LVCMOS33")
-    ),
+    # ("serial", 1,
+    #     Subsignal("rx", Pins("E3")), # 27 on H4 Must be changed in next HW version to 144
+    #     Subsignal("tx", Pins("F4")), # 28 on H4 Must be changed in next HW version to 142
+    #     IOStandard("LVCMOS33")
+    # ),
     
+# ("spiflash", 0,
+#     Subsignal("cs_n", Pins("T1")),
+#     Subsignal("clk",  Pins("R1")),
+#     Subsignal("mosi", Pins("R2")),
+#     Subsignal("miso", Pins("T2")),
+#     IOStandard("LVCMOS33")
+# ),
+#    ("spiflash", 1,
+#        Subsignal("cs_n", Pins("31")),
+#        Subsignal("clk",  Pins("30")),
+#        Subsignal("mosi", Pins("29")),
+#        Subsignal("miso", Pins("28")),
+#        IOStandard("LVCMOS33")
+# s    ),
     # Leds
     ("user_led", 0, Pins("T6"), IOStandard("LVCMOS33")),
     #("user_led", 1, Pins("76"), IOStandard("LVCMOS33"), Misc("DRIVE_STRENGTH=3")),
     # Buttons
     ("user_btn_n", 0, Pins("R7"), IOStandard("LVCMOS33")),
 
-    # SPIFlash
-#    ("spiflash", 0,
-#        Subsignal("cs_n", Pins("31")),
-#        Subsignal("clk",  Pins("30")),
-#        Subsignal("mosi", Pins("29")),
-#        Subsignal("miso", Pins("28")),
-#        IOStandard("LVCMOS33")
-#s    ),
 
     # SPIRAM
     # SPIFlash

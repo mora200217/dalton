@@ -21,5 +21,6 @@ int recibir_paquete(void);
 void procesar_distancia(void);
 void manejar_estado_por_distancia(void);
 void loop_principal(void);
+void iniciar_lidar(void);  
 
 #endif // SENSOR_DISTANCIA_H
