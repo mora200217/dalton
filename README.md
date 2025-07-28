@@ -54,17 +54,6 @@ El sistema permite que un robot se desplace de forma autónoma siguiendo objetiv
 - **Función:** Coordina todos los módulos.
 - **Procesador:** Basado en arquitectura **RISC-V**.
 
----
-
-## ⚙️ Tecnologías y Herramientas
-
-- 🧠 **Procesador RISC-V** (ESP32-C3 u otro compatible)
-- 🖼️ **Procesamiento de imagen** (detección por color)
-- ⚡ **PWM para control de motores**
-- 📟 **Sensores de proximidad** (ultrasónicos o IR)
-- 🧪 **Lenguajes:** C (Arduino/ESP-IDF/Asembly), VHDL/Verilog (si hay lógica dedicada)
-
----
 
 ## 🚀 Estado del Proyecto
 
